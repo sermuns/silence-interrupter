@@ -6,3 +6,5 @@ edition = "2024"
 [dependencies]
 ratatui = { version = "0.30", default-features = false, features = ["crossterm"] }
 simple-eyre = "0.3"
+rodio = { version = "0.22", default-features = false, features = ["playback", "vorbis"] }
+fastrand = "2"
