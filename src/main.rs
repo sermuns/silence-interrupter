@@ -8,8 +8,7 @@ fn main() -> simple_eyre::Result<()> {
 
     let mut app = App::new()?;
 
-    app.run()?;
-    // ratatui::run(|terminal| app.run(terminal))?;
+    ratatui::run(|terminal| app.run(terminal))?;
 
     Ok(())
 }
