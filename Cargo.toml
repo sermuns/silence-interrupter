@@ -9,3 +9,11 @@ simple-eyre = "0.3"
 rodio = { version = "0.22", default-features = false, features = ["playback", "vorbis"] }
 fastrand = "2"
 rust-embed = "8"
+
+[profile.release]
+opt-level = 3
+debug = false
+panic = "unwind"
+lto = true
+codegen-units = 1
+strip = true
