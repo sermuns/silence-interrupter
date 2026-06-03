@@ -4,11 +4,12 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-ratatui = { version = "0.30", default-features = false, features = ["crossterm"] }
-simple-eyre = "0.3"
-rodio = { version = "0.22", default-features = false, features = ["playback", "vorbis"] }
+clap = { version = "4", features = ["derive"] }
 fastrand = "2"
+humantime = "2"
+rodio = { version = "0.22", default-features = false, features = ["playback", "vorbis"] }
 rust-embed = "8"
+simple-eyre = "0.3"
 
 [profile.release]
 opt-level = 3
