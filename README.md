@@ -53,7 +53,7 @@ A good(bad) idea is to create a `systemd` service so it auto-starts with your lo
 
 1. Create `~/.config/systemd/user/silence-interrupter.service` with the contents
 
-   ```systemd
+   ```ini
    [Unit]
    Description=silence-interrupter
 
