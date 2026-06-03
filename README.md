@@ -2,11 +2,16 @@
 
 # `silence-interrupter`
 
-<img src="./media/illustrative-image.png" width=700>
+<a href="https://github.com/sermuns/silence-interrupter/releases/latest"><img alt="release-badge" src="https://img.shields.io/github/v/release/sermuns/silence-interrupter.svg"></a>
+<a href="https://crates.io/crates/silence-interrupter"><img src="https://img.shields.io/crates/v/silence-interrupter.svg" alt="Version info"></a>
 
 </div>
 
 For when you're too deeply locked in, and just need that adrenaline-kick every so often.
+
+<p align=center>
+  <img src="./media/illustrative-image.png" width=700>
+</p>
 
 ## Features
 
@@ -17,8 +22,16 @@ For when you're too deeply locked in, and just need that adrenaline-kick every s
 Install
 
 ```sh
-cargo install --git https://github.com/sermuns/silence-interrupter
+cargo install silence-interrupter
 ```
+
+or
+
+```sh
+cargo binstall silence-interrupter
+```
+
+or download [latest release](https://github.com/sermuns/silence-interrupter/releases/latest)
 
 and run it, here's the usage:
 
