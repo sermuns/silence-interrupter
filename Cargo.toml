@@ -1,5 +1,7 @@
 [package]
 name = "silence-interrupter"
+description = "Play brainrot sounds at random time intervals, keeping you on edge."
+categories = ["command-line-utilities", "multimedia::audio"]
 version = "0.1.0"
 edition = "2024"
 license = "GLWTPL"
