@@ -1,0 +1,2 @@
+compile:
+	fd -e typ -x typst c {} {.}.png

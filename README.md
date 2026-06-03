@@ -2,6 +2,8 @@
 
 # `silence-interrupter`
 
+<img src="./media/illustrative-image.png" width=700>
+
 </div>
 
 For when you're too deeply locked in, and just need that adrenaline-kick every so often.
@@ -56,6 +58,10 @@ A good(bad) idea is to create a `systemd` service so it auto-starts with your lo
    ```
 
 3. Welcome to your new life!
+
+## Contributing
+
+We need more sounds. Please contribute!
 
 ## Disclaimer
 
