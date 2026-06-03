@@ -51,6 +51,10 @@ jobs:
         with:
           shared-key: ${{ matrix.build.TARGET }}
 
+      - name: Install ALSA
+        if: matrix.build.OS == 'ubuntu-latest'
+        run: sudo apt-get update && sudo apt-get install -y libasound2-dev pkg-config
+
       - name: Build
         run: cargo build --release --locked --target ${{ matrix.build.TARGET }}
 
