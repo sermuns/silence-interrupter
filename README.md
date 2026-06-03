@@ -8,9 +8,7 @@ For when you're too deeply locked in, and just need that adrenaline-kick every s
 
 ## Features
 
-- Will play a random "brainrot"-sound every so often, according to the random time interval you specify.
-
-Nothing else.
+1. Will play a random "brainrot"-sound every so often, according to the random time interval you specify.
 
 ## Usage
 
@@ -31,6 +29,33 @@ Options:
   -h, --help                  Print help
   -V, --version               Print version
 ```
+
+### Make it always run in the background
+
+A good(bad) idea is to create a `systemd` service so it auto-starts with your login session:
+
+1. Create `~/.config/systemd/user/silence-interrupter.service` with the contents
+
+   ```systemd
+   [Unit]
+   Description=silence-interrupter
+
+   [Service]
+   Type=simple
+   ExecStart=%h/.cargo/bin/silence-interrupter --range 1m..10m # or whatever range you want
+   Restart=on-failure
+
+   [Install]
+   WantedBy=default.target
+   ```
+
+2. Enable and start the service:
+
+   ```sh
+   systemctl --user enable --now silence-interrupter
+   ```
+
+3. Welcome to your new life!
 
 ## Disclaimer
 
