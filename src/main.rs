@@ -2,6 +2,7 @@ use clap::Parser;
 use rust_embed::Embed;
 use std::{
     io::{Cursor, Read, Seek},
+    ops::Range,
     time::{Duration, Instant},
 };
 
@@ -23,19 +24,23 @@ fn main() -> simple_eyre::Result<()> {
     let mut audio_player = rodio::Player::connect_new(audio_device.mixer());
     let num_audio_files = Audio::iter().count();
 
-    let mut next_interruption = random_future_instant();
+    let mut next_interruption = random_future_instant(&args.range);
 
     loop {
         if next_interruption.elapsed() > Duration::ZERO {
             println!("happened!");
             audio_player = rodio::play(audio_device.mixer(), get_random_audio(num_audio_files))?;
-            next_interruption = random_future_instant();
+            next_interruption = random_future_instant(&args.range);
         }
     }
 }
 
-fn random_future_instant() -> Instant {
-    Instant::now() + Duration::from_secs(fastrand::u64(1..5))
+fn random_future_instant(range: &Range<Duration>) -> Instant {
+    let t = fastrand::f64();
+    let seconds = range.start.as_secs_f64() * (1. - t) + range.end.as_secs_f64() * t;
+    let duration = Duration::from_secs_f64(seconds);
+    println!("happening in '{:?}'", duration);
+    Instant::now() + duration
 }
 
 fn get_random_audio(num_audio_files: usize) -> impl Read + Seek + Sync + 'static {
