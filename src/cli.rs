@@ -10,7 +10,7 @@ pub struct Args {
         short,
         long,
         value_parser = parse_duration_range,
-        value_name = "start>..<end",
+        value_name = "START>..<END",
     )]
     pub range: Range<Duration>,
 
@@ -21,9 +21,7 @@ pub struct Args {
 }
 
 fn parse_duration_range(s: &str) -> simple_eyre::Result<Range<Duration>> {
-    let (start_str, end_str) = s
-        .split_once("..")
-        .ok_or_eyre("Invalid range format. Expected format: <start>..<end>")?;
+    let (start_str, end_str) = s.split_once("..").ok_or_eyre("Invalid range format")?;
     let start = humantime::parse_duration(start_str)?;
     let end = humantime::parse_duration(end_str)?;
     Ok(start..end)

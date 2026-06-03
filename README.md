@@ -38,10 +38,10 @@ and run it, here's the usage:
 ```present cargo run -- -h
 Play brainrot sounds at random time intervals, keeping you on edge.
 
-Usage: silence-interrupter [OPTIONS] --range <start>..<end>
+Usage: silence-interrupter [OPTIONS] --range <START>..<END>
 
 Options:
-  -r, --range <start>..<end>  Possible random time range
+  -r, --range <START>..<END>  Possible random time range
   -g, --gain <GAIN>           [default: 1]
   -h, --help                  Print help
   -V, --version               Print version
