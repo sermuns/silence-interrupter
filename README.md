@@ -36,6 +36,8 @@ or download [latest release](https://github.com/sermuns/silence-interrupter/rele
 and run it, here's the usage:
 
 ```present cargo run -- -h
+Play brainrot sounds at random time intervals, keeping you on edge.
+
 Usage: silence-interrupter [OPTIONS] --range <start>..<end>
 
 Options:

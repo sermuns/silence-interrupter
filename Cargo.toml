@@ -3,7 +3,7 @@ name = "silence-interrupter"
 description = "Play brainrot sounds at random time intervals, keeping you on edge."
 categories = ["command-line-utilities", "multimedia::audio"]
 repository = "https://github.com/sermuns/silence-interrupter"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 license = "GLWTPL"
 
